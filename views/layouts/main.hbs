@@ -61,6 +61,55 @@
 	
 	<!-- TOP BAR -->
 	<div id="main-nav" class="navbar navbar-inverse bs-docs-nav" role="banner">
+	{{#if register}}
+		<div class="container">	
+			<!-- SECTION HEADER -->
+		        <div class="section-header">
+				
+				<!-- SECTION TITLE -->
+				<h2 class="white-text">Înregistrare</h2>
+				
+				<!-- SHORT DESCRIPTION ABOUT THE SECTION -->
+				<h6 class="white-text">
+					Ai vreo intrebare? Scrie-ne un mesaj. Vom reveni cu un raspuns in urmatoarele 24 de ore.
+				</h6>
+			</div>
+			<!-- / END SECTION HEADER -->
+			
+			<!-- CONTACT FORM-->
+			<div class="row">
+				<form role="form" class="contact-form" id="contact-form">
+					<div class="wow fadeInLeft animated" data-wow-offset="30" data-wow-duration="1.5s" data-wow-delay="0.15s">
+					<div class="col-lg-4 col-sm-4">
+						<input type="text" name="name" placeholder="Numele tău" class="form-control input-box" id="name">
+					</div>
+					<div class="col-lg-4 col-sm-4">
+						<input type="email" name="email" placeholder="Email" class="form-control input-box" id="email">
+					</div>
+					<div class="col-lg-4 col-sm-4">
+						<input type="text" name="subject" placeholder="Subiect" class="form-control input-box" id="subject">
+					</div>
+					</div>
+					
+					<div class="clearfix">
+					<div class="col-md-12 wow fadeInRight animated" data-wow-offset="30" data-wow-duration="1.5s" data-wow-delay="0.15s">
+						<textarea name="message" class="form-control textarea-box" placeholder="Mesajul tău" id="message"></textarea>			</div>
+					</div>
+					<!-- IF MAIL SENT SUCCESSFULLY -->
+							<h4 class="success pull-left white-text">
+								Your message has been sent successfully.
+							</h4>
+							
+							<!-- IF MAIL SENDING UNSUCCESSFULL -->
+							<h4 class="error pull-left white-text">
+								E-mail must be valid and message must be longer than 1 character.
+							</h4>
+					<button class="btn btn-primary custom-button red-btn wow fadeInLeft animated" id="submit" data-wow-offset="30" data-wow-duration="1.5s" data-wow-delay="0.15s" type="submit">ÎNREGISTRARE</button>
+				</form>
+			</div>
+			<!-- / END CONTACT FORM-->
+		</div> <!-- / END CONTAINER -->
+	{{else}}
 		<div class="container">
 			<div class="navbar-header responsive-logo">
 				<button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#bs-navbar-collapse">
@@ -95,6 +144,7 @@
 			</ul>
 			</nav>
 		</div>
+	{{/if}}
 	</div>
 	<!-- / END TOP BAR -->
 	
