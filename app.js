@@ -43,16 +43,7 @@ router.get('/exploreaza', function(req, res) {
 // route with parameters (http://localhost:8080/hello/:name)
 router.get('/exploreaza/:filter', function(req, res) {
     // local vars
-    var path = '', all = false, filter = req.params.filter;
-    // options
-    var options = {
-        root: __dirname + '/public/',
-        dotfiles: 'deny',
-        headers: {
-            'x-timestamp': Date.now(),
-            'x-sent': true
-        }
-    };
+    var all = false, filter = req.params.filter;
     // log
     console.log('exploreaza -> ' + filter);
     // log path
