@@ -14,7 +14,7 @@
     "couch"         : false,
     "wsh"           : true,   // Windows Scripting Host.
  
-    // "jquery"        : true,
+    "jquery"        : true,
     // "ender"         : true,
     // "prototypejs"   : false,
     // "mootools"      : false,

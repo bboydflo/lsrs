@@ -1,15 +1,24 @@
 /* ================================
 ===  BACKGROUND SLIDER        ====
 ================================= */
-$.vegas('slideshow', {
+/*$.vegas('slideshow', {
   delay:7000,
   backgrounds:[
-    { src:'images/backgrounds/bg1.jpg', fade:1000 },
-    { src:'images/backgrounds/bg2.jpg', fade:1000 },
-    { src:'images/backgrounds/bg3.jpg', fade:1000 }
+    { src:'../images/backgrounds/bg1.jpg', fade:1000 },
+    { src:'../images/backgrounds/bg2.jpg', fade:1000 },
+    { src:'../images/backgrounds/bg3.jpg', fade:1000 }
+  ]
+});*/
+
+$.vegas('slideshow', {
+  delay:1000,
+  backgrounds:[
+    { src:'../images/backgrounds/express.gif', fade:1000 }
   ]
 });
-      
+
+$.vegas('pause');
+     
    
 /* =================================
    LOADER                     

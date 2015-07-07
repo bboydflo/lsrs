@@ -14,5 +14,7 @@
     "morgan": "~1.6.1",
     "serve-favicon": "~2.3.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "express-handlebars": "^2.0.1"
+  }
 }
