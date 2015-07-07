@@ -8,9 +8,6 @@ var bodyParser = require('body-parser');
 
 var app = express();
 
-// get an instance of router
-var router = express.Router();
-
 // set default views directory
 app.set('views', path.join(__dirname, 'views'));
 
@@ -27,6 +24,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static('public'));
 
+// get an instance of router
+var router = express.Router();
+
+// website route
 router.get('/', function(req, res) {
     // log
     console.log('index');
@@ -36,29 +37,27 @@ router.get('/', function(req, res) {
     // res.send('im the home page!'); 
 });
 
+// login route
 router.get('/login', function(req, res) {
     // render login page
     res.render('login', {});
 });
 
+// register route
 router.get('/register', function(req, res) {
     // render login page
     res.render('main', {'register': true});
 });
 
-// about page route (http://localhost:8080/about)
+// exploreaza route
 router.get('/exploreaza', function(req, res) {
     res.render('exploreaza', {'acasa': false, 'page-title': 'Exploreaza', 'path': 'exploreaza'});
 });
 
-// route with parameters (http://localhost:8080/hello/:name)
+// exploreaza route with parameter
 router.get('/exploreaza/:filter', function(req, res) {
     // local vars
     var all = false, filter = req.params.filter;
-    // log
-    console.log('exploreaza -> ' + filter);
-    // log path
-    // console.log(req);
     // check filter
     if(filter && filter === 'all') {
         // all -> true
@@ -68,10 +67,6 @@ router.get('/exploreaza/:filter', function(req, res) {
     // res.send('hello ' + req.params.filter + '!');
 });
 
-app.get('/contact', function (req, res) {
-  res.sendfile(__dirname + '/public/contact.html');
-});
-
 app.get('/full', function(req, res) {
     // res.sendfile(__dirname + '/public/full-page.html');
     res.sendfile('./public/full-page.html');
@@ -79,9 +74,6 @@ app.get('/full', function(req, res) {
 
 // apply the routes to our application
 app.use('/', router);
-
-// default public directory serving static files
-app.use(express.static(path.join(__dirname, 'public')));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
