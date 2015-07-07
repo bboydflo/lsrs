@@ -25,7 +25,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-// home page route (http://localhost:8080)
 router.get('/', function(req, res) {
     // log
     console.log('index');
@@ -33,6 +32,11 @@ router.get('/', function(req, res) {
     res.sendFile(__dirname + '/public/index.html');
     // res.render('home', {'acasa': true, 'page-title': 'Acasa', 'path': 'index'});
     // res.send('im the home page!'); 
+});
+
+router.get('/login', function(req, res) {
+    // render login page
+    res.render('login', {});
 });
 
 // about page route (http://localhost:8080/about)
@@ -61,21 +65,16 @@ app.get('/contact', function (req, res) {
   res.sendfile(__dirname + '/public/contact.html');
 });
 
+app.get('/full', function(req, res) {
+    // res.sendfile(__dirname + '/public/full-page.html');
+    res.sendfile('./public/full-page.html');
+});
+
 // apply the routes to our application
 app.use('/', router);
 
 // default public directory serving static files
 app.use(express.static(path.join(__dirname, 'public')));
-// app.use('/css',express.static(__dirname+'/public/css'));
-// app.use('/images',express.static(__dirname+'/public/imgages'));
-// app.use('/js',express.static(__dirname+'/public/js'));
-
-/*
-app.get('/full', function(req, res) {
-    // res.sendfile(__dirname + '/public/full-page.html');
-    res.sendfile('./public/full-page.html');
-});
-*/
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

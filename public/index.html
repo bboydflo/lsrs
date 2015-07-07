@@ -32,6 +32,37 @@
 <link rel="stylesheet" href="css/styles-zerif.css">
 <link rel="stylesheet" href="css/responsive.css">
 
+<style type="text/css" media=screen>
+	#myModal .modal-content {
+		background-color: #f7f7f7;
+		color: #fff;
+	}
+
+	#myModal .modal-title {
+		font-family: Montserrat;
+		font-size: 2.5em;
+		color: rgb(58, 176, 226);
+		text-transform: capitalize;
+	}
+
+	#myModal .checkbox {
+		/*margin-top: 0;
+		margin-bottom: 0;*/
+	}
+
+	#myModal label {
+		color: #555;
+	}
+
+	#myModal input[type='checkbox'] {
+		margin-top: 7px;
+	}
+
+	#myModal .input-box {
+		width: 100%;
+	}
+</style>
+
 <!-- WEBFONT -->
 <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,400italic|Montserrat:700,400|Homemade+Apple' rel='stylesheet' type='text/css'>
 
@@ -87,7 +118,8 @@
 				<li><a href="#testimonials">Testimonials</a></li>
 				-->
 				<li><a href="#contact">Contact</a></li>
-				<li><a href="full">Full page</a></li>
+				<li><a href="#login" class="external">Login</a></li>
+				<!-- <li><a href="full">Full page</a></li> -->
 			</ul>
 			</nav>
 		</div>
@@ -473,6 +505,92 @@
 </div> <!-- / END CONTAINER -->
 </footer> <!-- / END FOOOTER  -->
 
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Login to CouchFriends LSRS	</h4>
+      </div>
+      <div class="modal-body">
+
+		<form class="form-horizontal">
+		  <div class="form-group">
+		    <!-- <label for="inputEmail3" class="col-sm-2 control-label">Email</label> -->
+		    <div class="col-sm-12">
+		      <input type="email" class="form-control input-box" placeholder="Email">
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <!-- <label for="inputPassword3" class="col-sm-2 control-label">Password</label> -->
+		    <div class="col-sm-12">
+		      <input type="password" class="form-control input-box" placeholder="Password">
+		    </div>
+		  </div>
+		  <!-- <div class="form-group">
+		    <div class="col-sm-12">
+		      <div class="checkbox">
+		        <label>
+		          <input type="checkbox"> Remember me
+		        </label>
+		      </div>
+		    </div>
+		  </div> -->
+		  <!-- <div class="form-group">
+		    <div class="col-sm-offset-2 col-sm-10">
+		      <button type="submit" class="btn btn-default">Sign in</button>
+		    </div>
+		  </div> -->
+		</form>
+
+
+
+	    <!-- <form accept-charset="UTF-8" role="form">
+	    		  	<div class="form-group">
+	    			    <input class="form-control input-box" placeholder="E-mail" name="email" type="text">
+	    			</div>
+	    			<div class="form-group">
+	    				<input class="form-control input-box" placeholder="Password" name="password" type="password" value="">
+	    			</div>
+	    			<div class="checkbox pull-left">
+	    		<label class="dark">
+	    			<input name="remember" type="checkbox" value="Remember Me"> Remember Me
+	    		</label>
+	    	</div>
+	    		</form> -->
+
+      	<!-- CONTACT FORM-->
+		<!-- <div class="row">
+			<form role="form" class="contact-form" id="contact-form">
+				<div class="wow fadeInLeft animated" data-wow-offset="30" data-wow-duration="1.5s" data-wow-delay="0.15s">
+				<div class="col-lg-12 col-md-12 col-sm-12">
+					<input type="text" name="name" placeholder="Your Name" class="form-control input-box" id="name">
+				</div>
+				<div class="col-lg-12 col-md-12 col-sm-12">
+					<input type="email" name="email" placeholder="Your Email" class="form-control input-box" id="email">
+				</div>
+				</div>
+				<div class="checkbox">
+				<label>
+					<input type="checkbox"> Check me out</label>
+			  	</div>
+			</form>
+		</div> -->
+      </div>
+      <div class="modal-footer">
+      	<div class="row">
+	      	<a href="#works" class="btn btn-primary custom-button green-btn">Login</a>
+			<a href="#pricingtable" class="btn btn-primary custom-button blue-btn" style="margin-bottom: 10px;">Înregistrare</a>	
+      	</div>
+        <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button> -->        
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- Modal -->
+
 <!-- SCRIPTS -->
 <script src="js/bootstrap.min.js"></script>
 <script src="js/wow.min.js"></script>
@@ -485,8 +603,14 @@
 
 <script type="text/javascript">
 $(function(){
-	// log
-	console.log('index loaded');
+
+	$('a.external').click(function(event){
+		// prevent default
+		event.preventDefault();
+		
+		// trigger modal show
+		$('#myModal').modal();
+	});
 });
 </script>
 
